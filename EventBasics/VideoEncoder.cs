@@ -10,6 +10,8 @@ namespace EventBasics
         //step3: Raise the Event
 
         //Step 1 : 
+        //We can even use system define EventHandler delegate to declare the event so there is no need to create the delegate
+
         public delegate void VideoEncodedEventHandler(Object sender, EventArgs e);
 
         //Step 2 :
