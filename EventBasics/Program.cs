@@ -8,20 +8,12 @@ namespace EventBasics
         {
             Video video = new Video() { Name = ".Net Video Tutorials !" };
             VideoEncoder videoEncoder = new VideoEncoder();//publisher
-            EmailService emailService = new EmailService();//subscriber
+            MailService mailService = new MailService();//subscriber
 
-            videoEncoder.VideoEncoded += emailService.OnVideoEncoded;
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
 
             videoEncoder.Encode(video);
             Console.ReadLine();
-        }
-    }
-
-    public class EmailService
-    {
-        public void OnVideoEncoded(Object sender, EventArgs e)
-        {
-            Console.WriteLine("Custom event raised for sending an email : email sent");
         }
     }
 }
